@@ -9,7 +9,7 @@ const app = new Hono();
 app.use(prettyJSON());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://jawara.cloud",
     allowMethods: ["GET"],
   }),
 );
@@ -29,7 +29,7 @@ app.get("/ping", async (c) => {
     return c.json({ error: error.message });
   }
 });
-app.get("/hook", async (c) => {
+app.get("/scrape", async (c) => {
   try {
     await UpdateItems(await client(c.env.DATABASE_URL), c.env.RSS_URL);
     c.status(201);
