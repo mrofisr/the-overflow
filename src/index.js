@@ -13,7 +13,8 @@ app.use(
     allowMethods: ["GET"],
   }),
 );
-app.use("*", async (c) => {
+app.use("*", async (c, next) => {
+  await next();
   if (c.req.method !== "GET") {
     c.status(405);
     return c.json({ error: "Method Not Allowed" });
