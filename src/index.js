@@ -13,6 +13,12 @@ app.use(
     allowMethods: ["GET"],
   }),
 );
+app.use("*", async (c) => {
+  if (c.req.method !== "GET") {
+    c.status(405);
+    return c.json({ error: "Method Not Allowed" });
+  }
+});
 app.get("/", (c) => {
   c.status(200);
   return c.json({ message: "assalamu'alaikum" });
