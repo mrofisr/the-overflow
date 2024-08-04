@@ -59,7 +59,7 @@ export default {
   },
   async scheduled(event, env, ctx) {
     ctx.waitUntil(
-      await UpdateRssItems(await client(env.DATABASE_URL, env.RSS_URL)),
+      await UpdateItems(await client(env.DATABASE_URL), env.RSS_URL),
     );
     ctx.waitUntil(
       await SendTelegram(
