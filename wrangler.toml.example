@@ -1,0 +1,14 @@
+name = "rss-parser"
+main = "src/index.js"
+compatibility_date = "2023-12-01"
+send_metrics = false
+node_compat = true
+minify = true
+
+[vars]
+DATABASE_URL = "postgres://user:pass@host/db-name"
+TELEGRAM_BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN"
+TELEGRAM_CHAT_ID="YOUR_TELEGRAM_CHAT_ID"
+
+[triggers]
+crons = ["*/5 * * * *"]
