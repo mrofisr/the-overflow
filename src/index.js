@@ -6,6 +6,7 @@ import { UpdateItems } from "@/repository/feeds.js";
 import { SendTelegram } from "@/lib/telegram";
 
 const app = new Hono();
+
 app.use(prettyJSON());
 app.use(
   cors({
