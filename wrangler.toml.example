@@ -6,9 +6,10 @@ node_compat = true
 minify = true
 
 [vars]
-DATABASE_URL = "postgres://user:pass@host/db-name"
-TELEGRAM_BOT_TOKEN="YOUR_TELEGRAM_BOT_TOKEN"
-TELEGRAM_CHAT_ID="YOUR_TELEGRAM_CHAT_ID"
+RSS_URL=""
+DATABASE_URL=""
+TELEGRAM_BOT_TOKEN=""
+TELEGRAM_CHAT_ID=""
 
 [triggers]
-crons = ["*/5 * * * *"]
+crons = ["0 * * * *"]
