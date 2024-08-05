@@ -28,6 +28,11 @@ const SendTelegram = async (client, token, chat_id) => {
         body: JSON.stringify(body),
       });
     }
+    const updateQuery = `
+      UPDATE items SET telegram_sent = true
+      WHERE telegram_sent = false;
+    `;
+    await client.query(updateQuery, [item_id]);
   } catch (error) {
     console.error(
       LogFormatter(

@@ -36,7 +36,7 @@ app.get("/ping", async (c) => {
     return c.json({ error: error.message });
   }
 });
-app.get("/scrape", async (c) => {
+app.get("/update", async (c) => {
   try {
     await UpdateItems(await client(c.env.DATABASE_URL), c.env.RSS_URL);
     c.status(201);
