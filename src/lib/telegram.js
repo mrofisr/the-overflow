@@ -32,7 +32,7 @@ const SendTelegram = async (client, token, chat_id) => {
       UPDATE items SET telegram_sent = true
       WHERE telegram_sent = false;
     `;
-    await client.query(updateQuery, [item_id]);
+    await client.query(updateQuery, []);
   } catch (error) {
     console.error(
       LogFormatter(
